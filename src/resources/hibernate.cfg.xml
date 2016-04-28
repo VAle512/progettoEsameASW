@@ -23,7 +23,7 @@
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
 
-		<!-- Da utilizzare solo in fase di sviluppo->
+		<!-- Da utilizzare solo in fase di sviluppo-->
         <!-- Drop the existing tables and create new one -->
        <property name="hbm2ddl.auto">create</property>
  
