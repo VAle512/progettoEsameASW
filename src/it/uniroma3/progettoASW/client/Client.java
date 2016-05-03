@@ -1,4 +1,4 @@
-package it.uniroma3.progettoASW.client;
+	package it.uniroma3.progettoASW.client;
 
 import java.util.logging.Logger;
 import it.uniroma3.progettoASW.service.RemoteException;

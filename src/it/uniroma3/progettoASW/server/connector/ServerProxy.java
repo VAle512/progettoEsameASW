@@ -1,10 +1,14 @@
 package it.uniroma3.progettoASW.server.connector;
 
+import it.uniroma3.progettoASW.service.RemoteException;
+import it.uniroma3.progettoASW.service.Service;
+import it.uniroma3.progettoASW.service.ServiceException;
+
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.*;
 
-public class ServerProxy {
+public class ServerProxy implements Service {
 	private int port;
 
 	public ServerProxy (int port) {
@@ -59,6 +63,13 @@ public class ServerProxy {
 
 		return reply;
 
+	}
+	
+	@Override
+	public String insertMovie(String[] args) throws ServiceException,
+			RemoteException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
