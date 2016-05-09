@@ -8,8 +8,9 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.*;
 
-public class ServerProxy implements Service {
+public class ServerProxy {
 	private int port;
+	private Service service;
 
 	public ServerProxy (int port) {
 		this.port = port;
@@ -30,13 +31,15 @@ public class ServerProxy implements Service {
 
 				if (!fromClient.equals("")) {
 					String[] infoMovie=fromClient.split(",");
-					String title=infoMovie[0];
-					int year=Integer.parseInt(infoMovie[1]);
-					String director=infoMovie[2];
-					int length=Integer.parseInt(infoMovie[3]);
-					String genre=infoMovie[4];
-					//chiamata al servizio del Server che si occupa della persistenza
-					// passando qyeste 5 stringhe
+					try {
+						service.insertMovie(infoMovie);
+					} catch (ServiceException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (RemoteException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 
 
@@ -63,13 +66,6 @@ public class ServerProxy implements Service {
 
 		return reply;
 
-	}
-	
-	@Override
-	public String insertMovie(String[] args) throws ServiceException,
-			RemoteException {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }
