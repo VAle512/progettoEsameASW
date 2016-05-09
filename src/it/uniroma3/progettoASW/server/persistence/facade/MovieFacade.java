@@ -1,4 +1,4 @@
-package it.uniroma3.progettoASW.persistence.facade;
+package it.uniroma3.progettoASW.server.persistence.facade;
 
 import java.util.GregorianCalendar;
 
@@ -6,9 +6,9 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import it.uniroma3.progettoASW.enums.Genre;
-import it.uniroma3.progettoASW.persistence.model.Catalog;
-import it.uniroma3.progettoASW.persistence.model.Movie;
-import it.uniroma3.progettoASW.persistence.util.HibernateUtil;
+import it.uniroma3.progettoASW.server.persistence.model.Catalogue;
+import it.uniroma3.progettoASW.server.persistence.model.Movie;
+import it.uniroma3.progettoASW.server.persistence.util.HibernateUtil;
 
 public class MovieFacade {
 	
@@ -19,7 +19,7 @@ public class MovieFacade {
 	}
 
 	public Movie addMovie(String title, Integer year, String director, Integer length, Genre genre) {
-		Catalog c = new CatalogFacade().getCatalog(genre);
+		Catalogue c = new CatalogueFacade().getCatalog(genre);
 		Movie m = new Movie(title, year, director, length, c);
 		c.addMovie(m);
 		c.setLastUpdate(new GregorianCalendar());

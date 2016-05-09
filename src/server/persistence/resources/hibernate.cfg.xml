@@ -28,7 +28,7 @@
        <property name="hbm2ddl.auto">create</property>
  
         <!-- Mention here all the model classes along with their package name -->
- 		<mapping class="it.uniroma3.progettoASW.persistence.model.Catalog"/>
+ 		<mapping class="it.uniroma3.progettoASW.persistence.model.Catalogue"/>
  		<mapping class="it.uniroma3.progettoASW.persistence.model.Movie"/>
  		 
     </session-factory>

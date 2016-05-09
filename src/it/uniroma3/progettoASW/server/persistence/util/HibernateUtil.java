@@ -1,4 +1,4 @@
-package it.uniroma3.progettoASW.persistence.util;
+package it.uniroma3.progettoASW.server.persistence.util;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -9,7 +9,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 public class HibernateUtil {
 	
 	private static Session session = null;
-	private static final String CFG_PATH = "/resources/hibernate.cfg.xml";
+	private static final String CFG_PATH = "/server/persistence/resources/hibernate.cfg.xml";
 	
 	public static Session getSession(){
 		if (session == null){

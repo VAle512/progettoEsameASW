@@ -1,4 +1,4 @@
-package it.uniroma3.progettoASW.persistence.model;
+package it.uniroma3.progettoASW.server.persistence.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,16 +19,16 @@ public class Movie {
 	private String director;
 	private Integer length;
 	@ManyToOne
-	private Catalog catalog;
+	private Catalogue catalogue;
 	
 	public Movie(){}
 
-	public Movie(String title, Integer year, String director, Integer length, Catalog catalog) {
+	public Movie(String title, Integer year, String director, Integer length, Catalogue catalogue) {
 		this.title = title;
 		this.year = year;
 		this.director = director;
 		this.length = length;
-		this.catalog=catalog;
+		this.catalogue=catalogue;
 	}
 
 	public Long getId() {
@@ -71,12 +71,12 @@ public class Movie {
 		this.length = length;
 	}
 
-	public Catalog getCatalog() {
-		return catalog;
+	public Catalogue getCatalog() {
+		return catalogue;
 	}
 
-	public void setCatalog(Catalog catalog) {
-		this.catalog = catalog;
+	public void setCatalog(Catalogue catalogue) {
+		this.catalogue = catalogue;
 	}
 		
 }

@@ -2,8 +2,8 @@ package it.uniroma3.progettoASW.servant;
 
 import java.util.logging.Logger;
 import it.uniroma3.progettoASW.service.*;
-import it.uniroma3.progettoASW.persistence.facade.MovieFacade;
 import it.uniroma3.progettoASW.enums.Genre;
+import it.uniroma3.progettoASW.server.persistence.facade.MovieFacade;
 
 public class Servant {
 	

@@ -1,4 +1,4 @@
-package it.uniroma3.progettoASW.persistence.model;
+package it.uniroma3.progettoASW.server.persistence.model;
 
 import java.util.Calendar;
 import java.util.LinkedList;
@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
 import it.uniroma3.progettoASW.enums.Genre;
 
 @Entity
-public class Catalog {
+public class Catalogue {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -32,9 +32,9 @@ public class Catalog {
 	@JoinColumn(name = "catalog_id")
 	private List<Movie> movies;
 	
-	public Catalog(){}
+	public Catalogue(){}
 
-	public Catalog(Calendar lastUpdate, Genre genre) {
+	public Catalogue(Calendar lastUpdate, Genre genre) {
 		this.lastUpdate = lastUpdate;
 		this.genre = genre;
 		this.movies = new LinkedList<Movie>();
