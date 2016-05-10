@@ -37,9 +37,10 @@ public class Server {
 //    /* Factory method per il servant Servant.
 //     * Ogni volta viene restituito un nuovo servant. */
 //    
-////    public Servant getServant() {
-////		return getServant(SERVER_ADDRESS);
-////    }
+    public Servant getServant() {
+    	Servant servant = new Servant();
+		return servant;
+    }
 //
 //    public Servant getServant(String serverHost) {
 //		logger.info("Server: getServant(" + serverHost + ")");
