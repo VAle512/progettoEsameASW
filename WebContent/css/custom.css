@@ -1,0 +1,88 @@
+
+
+.navbar-default {
+  background-color: #3c63e7;
+  border-color: #3c63e7;
+}
+.navbar-default .navbar-brand {
+  color: #fdfefe;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #f5f7f0;
+}
+.navbar-default .navbar-text {
+  color: #fdfefe;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #fdfefe;
+}
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: #f5f7f0;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu {
+  background-color: #3c63e7;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a {
+  color: #fdfefe;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
+  color: #f5f7f0;
+  background-color: #3c63e7;
+}
+.navbar-default .navbar-nav > li > .dropdown-menu > li > .divider {
+  background-color: #3c63e7;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+  color: #f5f7f0;
+  background-color: #3c63e7;
+}
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  color: #f5f7f0;
+  background-color: #3c63e7;
+}
+.navbar-default .navbar-toggle {
+  border-color: #3c63e7;
+}
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #3c63e7;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fdfefe;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #fdfefe;
+}
+.navbar-default .navbar-link {
+  color: #fdfefe;
+}
+.navbar-default .navbar-link:hover {
+  color: #f5f7f0;
+}
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #fdfefe;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: #f5f7f0;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+    color: #f5f7f0;
+    background-color: #3c63e7;
+  }
+}
+
+Find TWBSColor useful ? Share it !
+
+A work by Samuel Marchal
+
+Suggestions, comments, typo ?
+
+Licence MIT
+
+Buy me a coffee ! or Buy me a tea !
+
+All brand icons are trademarks of their respective owners.
+The use of these trademarks does not indicate endorsement of the trademark holder by TWBSColor, nor vice versa.
