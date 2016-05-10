@@ -1,4 +1,4 @@
-package it.uniroma3.progettoASW.server.persistence.model;
+package it.uniroma3.progettoASW.persistence.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
