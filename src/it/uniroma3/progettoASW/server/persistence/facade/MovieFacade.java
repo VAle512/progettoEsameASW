@@ -4,6 +4,7 @@ import java.util.GregorianCalendar;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.TransactionException;
 
 import it.uniroma3.progettoASW.enums.Genre;
 import it.uniroma3.progettoASW.server.persistence.model.Catalogue;
@@ -18,7 +19,7 @@ public class MovieFacade {
 		this.session = HibernateUtil.getSession();
 	}
 
-	public Movie addMovie(String title, Integer year, String director, Integer length, Genre genre) {
+	public Movie addMovie(String title, Integer year, String director, Integer length, Genre genre) throws TransactionException{
 		Catalogue c = new CatalogueFacade().getCatalog(genre);
 		Movie m = new Movie(title, year, director, length, c);
 		c.addMovie(m);
