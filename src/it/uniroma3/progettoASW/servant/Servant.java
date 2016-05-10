@@ -1,9 +1,7 @@
 package it.uniroma3.progettoASW.servant;
 
 import java.util.logging.Logger;
-
 import org.hibernate.TransactionException;
-
 import it.uniroma3.progettoASW.service.*;
 import it.uniroma3.progettoASW.enums.Genre;
 import it.uniroma3.progettoASW.server.persistence.facade.*;
@@ -36,8 +34,6 @@ public class Servant implements Service {
 		String director=args[2];
 		int length=Integer.parseInt(args[3]);
 		Genre genre=Genre.valueOf(args[4]);
-		
-		
 		try {
 			facade.addMovie(title,length,director,year,genre);
 			this.logger.info("Transaction completed");

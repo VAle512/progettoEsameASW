@@ -1,8 +1,5 @@
 package it.uniroma3.progettoASW.server;
 
-import it.uniroma3.progettoASW.client.connector.ClientProxy;
-import it.uniroma3.progettoASW.service.Service;
-
 import java.net.InetAddress;
 import java.util.logging.Logger;
 
@@ -30,25 +27,25 @@ public class Server {
     	try {
     		InetAddress address = InetAddress.getByName(serverHost);
     		int port = SERVER_PORT;
-    		proxy = new ServerProxy( port);
+    		proxy = new ServerProxy(port,new Servant());
     	} catch(Exception e) {
     		e.printStackTrace();
     	}
     	return proxy;
 	}
 	
-    /* Factory method per il servant Servant.
-     * Ogni volta viene restituito un nuovo servant. */
-    
-//    public Servant getServant() {
-//		return getServant(SERVER_ADDRESS);
+//    /* Factory method per il servant Servant.
+//     * Ogni volta viene restituito un nuovo servant. */
+//    
+////    public Servant getServant() {
+////		return getServant(SERVER_ADDRESS);
+////    }
+//
+//    public Servant getServant(String serverHost) {
+//		logger.info("Server: getServant(" + serverHost + ")");
+//		Servant servant = new Servant();
+//    	servant.setService( this.getService(serverHost) );
+//        return servant;
 //    }
-
-    public Servant getServant(String serverHost) {
-		logger.info("Server: getServant(" + serverHost + ")");
-		Servant servant = new Servant();
-    	servant.setService( this.getService(serverHost) );
-        return servant;
-    }
 
 }

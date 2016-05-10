@@ -27,7 +27,7 @@ public class ClientProxy implements Service{
 	}
 
 
-	//    /* metodo di supporto per la comunicazione remota */
+	/* metodo di supporto per la comunicazione remota */
 	private String doOperation(String[] args) throws ServiceException, RemoteException {
 		String reply=null;
 		String title= args[0];
@@ -43,6 +43,8 @@ public class ClientProxy implements Service{
 			DataOutputStream dOut = new DataOutputStream(clientSocket.getOutputStream());
 			dOut.writeUTF(title + "," + year + "," + director + "," + length + "," + genre );
 			dOut.flush();
+			DataInputStream dIn = new DataInputStream(clientSocket.getInputStream());
+			reply=dIn.readUTF();
 			clientSocket.close();
 		}
 		catch (IOException e) {

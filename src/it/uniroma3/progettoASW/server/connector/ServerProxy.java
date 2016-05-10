@@ -5,6 +5,7 @@ import it.uniroma3.progettoASW.service.Service;
 import it.uniroma3.progettoASW.service.ServiceException;
 
 import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.*;
 
@@ -12,12 +13,13 @@ public class ServerProxy {
 	private int port;
 	private Service service;
 
-	public ServerProxy (int port) {
+	public ServerProxy (int port,Service service) {
 		this.port = port;
+		this.service=service;
 	}
-	// service exception per i parametri da implementare
-	public String addMovieToCatalogue() {
-		String reply=null;
+	
+	public void addMovieToCatalogue() {
+		String reply="";
 		ServerSocket serverSocket=null;
 		try {
 			serverSocket = new ServerSocket(this.port);
@@ -26,13 +28,10 @@ public class ServerProxy {
 				String fromClient="";
 				DataInputStream dIn = new DataInputStream(socket.getInputStream());
 				fromClient=dIn.readUTF();
-				//                try {
-				//                	
-
 				if (!fromClient.equals("")) {
 					String[] infoMovie=fromClient.split(",");
 					try {
-						service.insertMovie(infoMovie);
+						reply=service.insertMovie(infoMovie);
 					} catch (ServiceException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -41,13 +40,12 @@ public class ServerProxy {
 						e.printStackTrace();
 					}
 				}
-
-
-				//                }
-				//                catch (ServiceException e) {
-				//                	
-				//                }
-
+				DataOutputStream dOut = new DataOutputStream(socket.getOutputStream());
+				dOut.writeUTF(reply);
+				if (reply.equals("Completed")) {
+					socket.close();
+					break;		
+				}
 			}
 
 		} catch (IOException e) {
@@ -62,10 +60,6 @@ public class ServerProxy {
 					e.printStackTrace();
 				}
 		}
-
-
-		return reply;
-
 	}
 
 }
