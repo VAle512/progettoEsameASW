@@ -19,12 +19,14 @@ public class MovieController {
 	private Integer length;
 	private Movie movie;
 	private Genre genre; 
+	private String gen;
 	private List<Movie> movies;
 	
 	@EJB(name="movieFacade")
 	MovieFacade movieFacade;
 	
 	public String createMovie() {
+		genre=Genre.valueOf(this.gen);
 		this.movie=movieFacade.addMovie(title, year, director, length, genre);
 		return "movie";
 		

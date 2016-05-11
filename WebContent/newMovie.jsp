@@ -46,8 +46,8 @@
 								required="true" requiredMessage="Length is mandatory"
 								converterMessage="Length must be a number" id="length" /> <h:message
 								for="length" /></td>
-						<td><h:inputText value="#{movieController.genre}"
-								required="true" requiredMessage="Genre is mandatory" id="genre" />
+						<td><h:inputText value="#{movieController.gen}"
+								required="true" requiredMessage="Genre is mandatory" id="gen" />
 							<h:message for="genre" /></td>
 					</tr>
 				</tbody>
