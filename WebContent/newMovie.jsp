@@ -19,8 +19,6 @@
 <body>
 	<f:view>
 		<h:form>
-
-
 			<h2>Details</h2>
 			<table class="table table-striped">
 				<thead>
@@ -38,8 +36,8 @@
 								required="true" requiredMessage="Title is mandatory" id="title" />
 							<h:message for="title" /></td>
 						<td><h:inputText value="#{movieController.director}"
-								required="true" requiredMessage="Director is mandatory" id="director" />
-							<h:message for="director" /></td>
+								required="true" requiredMessage="Director is mandatory"
+								id="director" /> <h:message for="director" /></td>
 						<td><h:inputText value="#{movieController.year}"
 								required="true" requiredMessage="Year is mandatory"
 								converterMessage="Year must be a number" id="year" /> <h:message
@@ -54,9 +52,6 @@
 					</tr>
 				</tbody>
 			</table>
-
-
-
 			<div>
 				<h:commandButton value="Submit"
 					action="#{movieController.createMovie}" />
