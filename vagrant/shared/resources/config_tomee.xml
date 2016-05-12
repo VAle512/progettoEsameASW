@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomee>
+  <!-- see http://tomee.apache.org/containers-and-resources.html -->
+
+  <!-- activate next line to be able to deploy applications in apps -->
+  <!-- <Deployments dir="apps" /> -->
+<Resource id="DatabaseASW" type="DataSource">
+	   JdbcDriver   com.ibm.db2.jcc.DB2Driver
+    JdbcUrl  jdbc:db2://localhost:50000/dbASW
+    UserName     vagrant
+    Password     vagrant
+           JtaManaged      true
+           DefaultAutoCommit   false
+</Resource>
+
+
+</tomee>

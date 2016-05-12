@@ -9,7 +9,7 @@ TOMEE_ARCHIVE=apache-tomee-${TOMEE_VERSION}-jaxrs.zip
 
 function installUnzip {
 	echo "installing unzip"
-	sudo apt-get install -y unzip
+	sudo apt-get install -yq unzip
 }
 
 
@@ -32,10 +32,27 @@ function installApacheTomee {
 
 function purgeUnzip {
 	echo "purging unzip"
-	sudo apt-get purge --auto-remove -y unzip
+	sudo apt-get purge --auto-remove -yq unzip
+}
+
+function setupConfigFiles {
+	echo "setup tomee conf/context.xml"
+	if resourceExists config_context.xml; then
+		cat ${VAGRANT_RESOURCES}/config_context.xml > /usr/local/apache-tomee-jaxrs-${TOMEE_VERSION}/conf/context.xml
+	else
+		echo "missing resource: " ${VAGRANT_RESOURCES}/config_context.xml
+	fi
+
+	echo "setup tomee conf/tomee.xml"
+	if resourceExists config_tomee.xml; then
+		cat ${VAGRANT_RESOURCES}/config_tomee.xml > /usr/local/apache-tomee-jaxrs-${TOMEE_VERSION}/conf/tomee.xml
+	else
+		echo "missing resource: " ${VAGRANT_RESOURCES}/config_tomee.xml
+	fi
 }
 
 
 installUnzip
 installApacheTomee
 purgeUnzip
+setupConfigFiles

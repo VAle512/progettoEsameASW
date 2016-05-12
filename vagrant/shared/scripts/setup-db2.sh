@@ -7,7 +7,7 @@ DB2_FILE=db2exc_amd64.deb
 
 function installGdebi {
 	echo "installing gdebi"
-	sudo apt-get install -y gdebi
+	sudo apt-get install -yq gdebi
 }
 
 function installDB2 {
@@ -27,7 +27,7 @@ function installLocalDB2 {
 
 function purgeGdebi {
 	echo "purging gdebi"
-	sudo apt-get purge --auto-remove -y gdebi
+	sudo apt-get purge --auto-remove -yq gdebi
 }
 
 function createDatabase {
