@@ -28,8 +28,12 @@ public class MovieController {
 	public String createMovie() {
 		genre=Genre.valueOf(this.gen);
 		this.movie=movieFacade.addMovie(title, year, director, length, genre);
-		return "movie";
-		
+		return "movie";		
+	}
+	
+	public String findMovie(String title) {
+		this.movie=this.movieFacade.findMovie(title);
+		return "catalogue";
 	}
 	
 	
@@ -64,6 +68,39 @@ public class MovieController {
 	public void setLength(Integer length) {
 		this.length = length;
 	}
+
+	public Movie getMovie() {
+		return movie;
+	}
+
+	public void setMovie(Movie movie) {
+		this.movie = movie;
+	}
+
+	public Genre getGenre() {
+		return genre;
+	}
+
+	public void setGenre(Genre genre) {
+		this.genre = genre;
+	}
+
+	public String getGen() {
+		return gen;
+	}
+
+	public void setGen(String gen) {
+		this.gen = gen;
+	}
+
+	public List<Movie> getMovies() {
+		return movies;
+	}
+
+	public void setMovies(List<Movie> movies) {
+		this.movies = movies;
+	}
+	
 
 
 }

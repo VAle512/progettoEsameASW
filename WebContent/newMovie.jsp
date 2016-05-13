@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="bootstrap-3.3.4-dist/css/bootstrap.min.css">
 <link href="./css/bootstrap.min.css" rel="stylesheet" />
 <link href="./css/custom.css" rel="stylesheet" />
-<title>New Product</title>
+<title>New Movie</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script
@@ -19,7 +19,7 @@
 <body>
 	<f:view>
 		<h:form>
-			<h2>Details</h2>
+			<h2>Movie Details</h2>
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -27,7 +27,6 @@
 						<th>Director</th>
 						<th>Year</th>
 						<th>Length</th>
-						<th>Genre</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -47,8 +46,8 @@
 								converterMessage="Length must be a number" id="length" /> <h:message
 								for="length" /></td>
 						<td><h:inputText value="#{movieController.gen}"
-								required="true" requiredMessage="Genre is mandatory" id="gen" />
-							<h:message for="genre" /></td>
+								required="true" requiredMessage="Genre is mandatory"
+								id="genre" /> <h:message for="genre" /></td>
 					</tr>
 				</tbody>
 			</table>

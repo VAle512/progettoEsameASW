@@ -25,5 +25,10 @@ public class MovieFacade {
 		this.em.merge(c);
 		return m;
 	}
+
+	public Movie findMovie(String title) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }
