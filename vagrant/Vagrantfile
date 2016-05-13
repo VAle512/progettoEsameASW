@@ -31,7 +31,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	config.vm.provision :shell, path: "./shared/scripts/setup-db2.sh"
 	config.vm.provision :shell, path: "./shared/scripts/setup-apache-tomee.sh"
 	#script da eseguire ad ogni avvio della macchina
-        config.vm.provision :shell, path: "./shared/scripts/startup-apache.sh", run:"always"
+        config.vm.provision :shell, path: "./shared/scripts/startup-apache-tomee.sh", run:"always"
 
         config.vm.provision :shell, 
             inline: "echo  'configurazione vm server completata'"
