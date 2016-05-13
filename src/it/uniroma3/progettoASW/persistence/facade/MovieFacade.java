@@ -31,4 +31,8 @@ public class MovieFacade {
 		return null;
 	}
 	
+	public Movie findMovieForGenre(Genre genre) {
+		return null;
+	}
+	
 }

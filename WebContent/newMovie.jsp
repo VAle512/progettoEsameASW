@@ -27,6 +27,7 @@
 						<th>Director</th>
 						<th>Year</th>
 						<th>Length</th>
+						<th>Genre</th>
 					</tr>
 				</thead>
 				<tbody>

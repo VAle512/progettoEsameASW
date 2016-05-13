@@ -21,13 +21,15 @@ public class CatalogueController {
 	private Genre genre;
 	private List<Movie> movies;
 	private Catalogue catalogue;
+	private String gen;
 	
 	@EJB(name="catalogueFacade")
 	private CatalogueFacade cataloqueFacade;
 	
 	public String createCatalogue () {
+		this.genre=Genre.valueOf(this.gen);
 		this.catalogue=this.cataloqueFacade.addCatalog(this.genre);
-		return "catalogue";
+		return "moviesToCatalogue";
 	}
 	
 	public String findCatalogue() {
@@ -68,6 +70,14 @@ public class CatalogueController {
 
 	public void setCatalogue(Catalogue catalogue) {
 		this.catalogue = catalogue;
+	}
+
+	public String getGen() {
+		return gen;
+	}
+
+	public void setGen(String gen) {
+		this.gen = gen;
 	}
 	
 	
