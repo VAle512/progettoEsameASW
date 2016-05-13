@@ -1,12 +1,15 @@
 package it.uniroma3.progettoASW.persistence.facade;
 
 import java.util.GregorianCalendar;
+import java.util.List;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 import it.uniroma3.progettoASW.enums.Genre;
+import it.uniroma3.progettoASW.persistence.exceptions.MovieNotFoundException;
 import it.uniroma3.progettoASW.persistence.model.Catalogue;
 import it.uniroma3.progettoASW.persistence.model.Movie;
 
@@ -26,13 +29,20 @@ public class MovieFacade {
 		return m;
 	}
 
-	public Movie findMovie(String title) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Movie> getAllMovies(){
+		Query q = this.em.createNamedQuery("SELECT m FROM Movie m");
+		List<Movie> movies = q.getResultList();
+		return movies;
+		
 	}
 	
-	public Movie findMovieForGenre(Genre genre) {
-		return null;
+	public Movie findMovie(String title) throws MovieNotFoundException {
+		List<Movie> movies = this.getAllMovies();
+		for(Movie m : movies){
+			if(m.getTitle().equals(title))
+				return m;
+		}
+		throw new MovieNotFoundException();
 	}
-	
+		
 }
