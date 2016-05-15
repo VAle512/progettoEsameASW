@@ -6,6 +6,7 @@ import javax.ejb.EJB;
 import javax.faces.bean.*;
 
 import it.uniroma3.progettoASW.enums.Genre;
+import it.uniroma3.progettoASW.persistence.exceptions.MovieNotFoundException;
 import it.uniroma3.progettoASW.persistence.facade.MovieFacade;
 import it.uniroma3.progettoASW.persistence.model.Movie;
 
@@ -32,7 +33,12 @@ public class MovieController {
 	}
 	
 	public String findMovie(String title) {
-		this.movie=this.movieFacade.findMovie(title);
+		try {
+			this.movie=this.movieFacade.findMovie(title);
+		} catch (MovieNotFoundException e) {
+			// TODO Auto-generated catch block
+			return "homepage";
+		}
 		return "catalogue";
 	}
 	
