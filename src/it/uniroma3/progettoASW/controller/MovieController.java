@@ -5,7 +5,6 @@ import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.*;
 
-import it.uniroma3.progettoASW.enums.Genre;
 import it.uniroma3.progettoASW.persistence.exceptions.MovieNotFoundException;
 import it.uniroma3.progettoASW.persistence.facade.MovieFacade;
 import it.uniroma3.progettoASW.persistence.model.Movie;
@@ -18,16 +17,14 @@ public class MovieController {
 	private Integer year;
 	private String director;
 	private Integer length;
-	private Movie movie;
-	private Genre genre; 
-	private String gen;
+	private Movie movie; 
+	private String genre;
 	private List<Movie> movies;
 	
 	@EJB(name="movieFacade")
 	MovieFacade movieFacade;
 	
 	public String createMovie() {
-		genre=Genre.valueOf(this.gen);
 		this.movie=movieFacade.addMovie(title, year, director, length, genre);
 		return "movie";		
 	}
@@ -36,10 +33,9 @@ public class MovieController {
 		try {
 			this.movie=this.movieFacade.findMovie(title);
 		} catch (MovieNotFoundException e) {
-			// TODO Auto-generated catch block
 			return "homepage";
 		}
-		return "catalogue";
+		return "movie";
 	}
 	
 	
@@ -83,20 +79,12 @@ public class MovieController {
 		this.movie = movie;
 	}
 
-	public Genre getGenre() {
+	public String getGenre() {
 		return genre;
 	}
 
-	public void setGenre(Genre genre) {
+	public void setGenre(String genre) {
 		this.genre = genre;
-	}
-
-	public String getGen() {
-		return gen;
-	}
-
-	public void setGen(String gen) {
-		this.gen = gen;
 	}
 
 	public List<Movie> getMovies() {
@@ -106,7 +94,5 @@ public class MovieController {
 	public void setMovies(List<Movie> movies) {
 		this.movies = movies;
 	}
-	
-
 
 }

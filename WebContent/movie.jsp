@@ -11,17 +11,17 @@
 <link rel="stylesheet" href="bootstrap-3.3.4-dist/css/bootstrap.min.css">
 <link href="./css/bootstrap.min.css" rel="stylesheet" />
 <link href="./css/custom.css" rel="stylesheet" />
-<title>Catalogue</title>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<title>Movie</title>
 </head>
 <body>
 	<f:view>
-	    <h1>Catalogue inserted into the database correctly </h1>
-		<h2>Catalogue Details</h2>
-		<div>Genre: ${catalogueController.catalogue.genre}</div>
+	    <h1>Movie inserted into the database correctly </h1>
+		<h2>Movie Details</h2>
+		<div>Title: ${movieController.title}</div>
+		<div>Director: ${movieController.director}</div>
+		<div>Year: ${movieController.year}</div>
+		<div>Length: ${movieController.length}</div>
+		<div>Genre: ${movieController.genre}</div>
 		<br>
 		<br>
 		<br>

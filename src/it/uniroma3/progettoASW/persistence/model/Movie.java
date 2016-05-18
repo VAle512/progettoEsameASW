@@ -71,11 +71,11 @@ public class Movie {
 		this.length = length;
 	}
 
-	public Catalogue getCatalog() {
+	public Catalogue getCatalogue() {
 		return catalogue;
 	}
 
-	public void setCatalog(Catalogue catalogue) {
+	public void setCatalogue(Catalogue catalogue) {
 		this.catalogue = catalogue;
 	}
 		

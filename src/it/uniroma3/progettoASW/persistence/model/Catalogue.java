@@ -16,8 +16,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import it.uniroma3.progettoASW.enums.Genre;
-
 @Entity
 public class Catalogue {
 
@@ -27,16 +25,16 @@ public class Catalogue {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Calendar lastUpdate;
 	@Column(unique = true, nullable = false)
-	private Genre genre;
+	private String genre;
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "catalog_id")
 	private List<Movie> movies;
 	
 	public Catalogue(){}
 
-	public Catalogue(Calendar lastUpdate, Genre genre) {
+	public Catalogue(Calendar lastUpdate, String genre) {
 		this.lastUpdate = lastUpdate;
-		this.genre = genre;
+		this.setGenre(genre);
 		this.movies = new LinkedList<Movie>();
 	}
 
@@ -70,12 +68,12 @@ public class Catalogue {
 		this.movies = movies;
 	}
 
-	public Genre getGenre() {
+	public String getGenre() {
 		return genre;
 	}
 
-	public void setGenre(Genre genre) {
-		this.genre = genre;
+	public void setGenre(String genre) {
+		this.genre = genre.toLowerCase();
 	}
 	
 }

@@ -46,7 +46,7 @@
 								required="true" requiredMessage="Length is mandatory"
 								converterMessage="Length must be a number" id="length" /> <h:message
 								for="length" /></td>
-						<td><h:inputText value="#{movieController.gen}"
+						<td><h:inputText value="#{movieController.genre}"
 								required="true" requiredMessage="Genre is mandatory"
 								id="genre" /> <h:message for="genre" /></td>
 					</tr>
@@ -58,5 +58,7 @@
 			</div>
 		</h:form>
 	</f:view>
+	
+	<a href="homepage.jsp" class="button">Go to Homepage</a>
 </body>
 </html>

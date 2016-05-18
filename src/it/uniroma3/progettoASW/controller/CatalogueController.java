@@ -7,7 +7,7 @@ import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 
-import it.uniroma3.progettoASW.enums.Genre;
+import it.uniroma3.progettoASW.persistence.exceptions.CatalogueNotFoundException;
 import it.uniroma3.progettoASW.persistence.facade.CatalogueFacade;
 import it.uniroma3.progettoASW.persistence.model.Catalogue;
 import it.uniroma3.progettoASW.persistence.model.Movie;
@@ -18,22 +18,24 @@ public class CatalogueController {
 	@ManagedProperty(value="#{param.id}")
 	private Long id;
 	private Calendar lastUpdate;
-	private Genre genre;
 	private List<Movie> movies;
 	private Catalogue catalogue;
-	private String gen;
+	private String genre;
 	
 	@EJB(name="catalogueFacade")
 	private CatalogueFacade cataloqueFacade;
 	
 	public String createCatalogue () {
-		this.genre=Genre.valueOf(this.gen);
-		this.catalogue=this.cataloqueFacade.addCatalog(this.genre);
-		return "moviesToCatalogue";
+		this.catalogue=this.cataloqueFacade.addCatalogue(this.genre);
+		return "catalogue";
 	}
 	
 	public String findCatalogue() {
-		this.catalogue=this.cataloqueFacade.getCatalog(this.genre);
+		try {
+			this.catalogue=this.cataloqueFacade.getCatalogue(this.genre.toLowerCase());
+		} catch (CatalogueNotFoundException e) {
+			e.printStackTrace();
+		}
 		return "catalogue";
 	}
 	
@@ -51,12 +53,6 @@ public class CatalogueController {
 	public void setLastUpdate(Calendar lastUpdate) {
 		this.lastUpdate = lastUpdate;
 	}
-	public Genre getGenre() {
-		return genre;
-	}
-	public void setGenre(Genre genre) {
-		this.genre = genre;
-	}
 	public List<Movie> getMovies() {
 		return movies;
 	}
@@ -72,15 +68,12 @@ public class CatalogueController {
 		this.catalogue = catalogue;
 	}
 
-	public String getGen() {
-		return gen;
+	public String getGenre() {
+		return genre;
 	}
 
-	public void setGen(String gen) {
-		this.gen = gen;
+	public void setGenre(String genre) {
+		this.genre = genre;
 	}
-	
-	
-	
 
 }

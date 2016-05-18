@@ -39,7 +39,7 @@
 					<div class="collapse navbar-collapse"
 						id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li><a href="catalogue.jsp">Catalogue</a></li>
+							<li><a href="newCatalogue.jsp">Add a Catalogue</a></li>
 							<li><a href="newMovie.jsp">Add a Movie</a></li>
 						</ul>
 					</div>
@@ -48,6 +48,10 @@
 				</div>
 				<!-- /.container --> </nav>
 			</div>
+			<br>
+			<br>
+			<br>
+			<br>
 			<!-- Page Content -->
 			<div class="container">
 				<div class="col-md-9">
@@ -65,15 +69,18 @@
 								</ol>
 								<div class="carousel-inner">
 									<div class="item active">
-										<img class="slide-image" src="http://www.smartworld.it/wp-content/uploads/2016/01/Breaking-Bad-Copertina.jpg"
+										<img class="slide-image"
+											src="http://www.smartworld.it/wp-content/uploads/2016/01/Breaking-Bad-Copertina.jpg"
 											alt="">
 									</div>
 									<div class="item">
-										<img class="slide-image" src="http://www.serialminds.com/wp-content/uploads/2016/04/game-of-thrones.jpg"
+										<img class="slide-image"
+											src="http://www.serialminds.com/wp-content/uploads/2016/04/game-of-thrones.jpg"
 											alt="">
 									</div>
 									<div class="item">
-										<img class="slide-image" src="http://signorponza.com/wp-content/uploads/2015/06/MadMaxFuryRoadPosterByDCDesigns.png"
+										<img class="slide-image"
+											src="http://signorponza.com/wp-content/uploads/2015/06/MadMaxFuryRoadPosterByDCDesigns.png"
 											alt="">
 									</div>
 								</div>
