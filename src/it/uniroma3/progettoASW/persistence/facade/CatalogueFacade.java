@@ -33,4 +33,17 @@ public class CatalogueFacade {
 		throw new CatalogueNotFoundException();
 	}
 	
+	public Catalogue getCatalogue(Long id)  {
+		Catalogue c = this.em.find(Catalogue.class, id);
+		return c;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public List<Catalogue> getAllCatalogues() {
+		Query q = this.em.createQuery("SELECT c FROM Catalogue c");
+		List<Catalogue> catalogues = q.getResultList();
+		return catalogues;
+		
+	}
+	
 }

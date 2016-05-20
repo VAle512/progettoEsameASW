@@ -41,6 +41,8 @@
 						<ul class="nav navbar-nav">
 							<li><a href="newCatalogue.jsp">Add a Catalogue</a></li>
 							<li><a href="newMovie.jsp">Add a Movie</a></li>
+							<li><h:commandLink action="#{catalogueController.getAllCatalogues}"
+									value="Our Catalogues" /></li>
 						</ul>
 					</div>
 
@@ -48,6 +50,8 @@
 				</div>
 				<!-- /.container --> </nav>
 			</div>
+			</h:form>
+			<h:form>
 			<br>
 			<br>
 			<br>

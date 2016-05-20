@@ -53,5 +53,13 @@ public class MovieFacade {
 		}
 		throw new MovieNotFoundException();
 	}
+
+	@SuppressWarnings("unchecked")
+	public List<Movie> getMoviesByCatalogue(Long id) {
+		Query q = this.em.createQuery("SELECT m FROM Movie m WHERE m.catalogue.id = :id");
+		q.setParameter("id", id);
+		List<Movie> movies = q.getResultList();
+		return movies;
+	}
 		
 }

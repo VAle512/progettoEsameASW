@@ -38,6 +38,10 @@ public class MovieController {
 		return "movie";
 	}
 	
+	public String findMoviesByCatalogue(){
+		this.movies = this.movieFacade.getMoviesByCatalogue(this.id);
+		return "catalogueMovies";
+	}
 	
 	//getters and setters
 	public Long getId() {
